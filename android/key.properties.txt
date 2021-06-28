@@ -1,0 +1,4 @@
+storePassword=fluttertest
+keyPassword=fluttertest
+keyAlias=upload
+storeFile=upload-keystore.jks
