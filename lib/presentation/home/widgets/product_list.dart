@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/domain/home/product.dart';
 import 'package:shopping_app/presentation/core/constants/theme_colors.dart';
+import 'package:shopping_app/presentation/product/product.dart';
+import 'package:shopping_app/presentation/routes/router.gr.dart';
+import 'package:auto_route/auto_route.dart';
 
 class HomeProductList extends StatefulWidget {
   final List<Product> products;
@@ -26,6 +29,10 @@ class _HomeProductListState extends State<HomeProductList> {
                 itemBuilder: (context,index){
                   return (index%2==0)?GestureDetector(
                     onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ProductExpanded(widget.products[index])),
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -88,6 +95,10 @@ class _HomeProductListState extends State<HomeProductList> {
                     itemBuilder: (context,index){
                       return (index%2==1)?GestureDetector(
                         onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ProductExpanded(widget.products[index])),
+                          );
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
